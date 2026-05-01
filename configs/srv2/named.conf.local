@@ -1,0 +1,4 @@
+zone "my.lab.test" {
+    type master;
+    file "/etc/bind/zones/db.my.lab.test.signed";
+};

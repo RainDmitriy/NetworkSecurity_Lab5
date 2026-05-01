@@ -1,0 +1,23 @@
+$TTL 3600
+@   IN  SOA srv2.lab.test. admin.lab.test. (
+        2026042403 ; Serial
+        3600       ; Refresh
+        900        ; Retry
+        1209600    ; Expire
+        3600 )     ; Negative Cache TTL
+
+    IN  NS  srv2.lab.test.
+
+@       IN  A   10.10.20.2
+www     IN  A   10.10.20.22
+api     IN  A   10.10.20.23
+; This is a zone-signing key, keyid 58822, for my.lab.test.
+; Created: 20260424233958 (Fri Apr 24 23:39:58 2026)
+; Publish: 20260424233958 (Fri Apr 24 23:39:58 2026)
+; Activate: 20260424233958 (Fri Apr 24 23:39:58 2026)
+my.lab.test. IN DNSKEY 256 3 5 AwEAAaJ5KsENb2rgBLNIhIds8Zu/nqNeLSWttj06ypvecpMNHjVUOiLz rQJ+gBoRMjy1LKMLS/yFo0LOcGLXoM0yAB8H6iDZhuNXfffj0QLZEbN1 9ZPzP1FQIxSGUgRyeiy2QSTMLb53G2GnYV7yWIKjBTHkQpQTR+OYiL6t sABjFTmeBOFNBBc84OXKRJdYRsSDQH6hq20HdGHoRf6s++ksVq/BDYBU 7YA2AzwlzgLKkNgUe1WNHCkf4k1oJYeTNP8yEdL3u0gMBLawxIR/0ucp Vp1wayZAWRpu/8mD9BE6jbDkX3VqxeI4XGBxCarfRAOit/r2AyQ0GdL0 RXWM4dWMYO8=
+; This is a key-signing key, keyid 60974, for my.lab.test.
+; Created: 20260424233951 (Fri Apr 24 23:39:51 2026)
+; Publish: 20260424233951 (Fri Apr 24 23:39:51 2026)
+; Activate: 20260424233951 (Fri Apr 24 23:39:51 2026)
+my.lab.test. IN DNSKEY 257 3 5 AwEAAa7CSpBM6xohy1DAQc4DKHSRMj1ASDbm59qY6ZWLnkRG/yYzGstp otzoX32EmBCOXkt5u9h9eZwzxuO+BDGCso/wcdrEajo+6mzXKj/uW7qs sJ0NcNlnW5g3d3tVMQgZqmiWLFHO82ccgyLzJw2Q8FKUyQxBHFOT8bov bkqVf9A+D50odWPGvpeqc46duQfexTznYPZ7urOmwcbifH/yHLPAzg7+ h0DPtLz5EdkB92SFi4RidmlbTaQrtuHno2YEIvegbGUaFJope9yNc3J/ /akkEY1Bdrg9F28uXwwZJlsN0tgkYPHQ+ayf3WOQTeSHga4SizoO3PAr tdtGn0Bent0=

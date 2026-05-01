@@ -1,0 +1,160 @@
+; File written on Fri Apr 24 23:40:56 2026
+; dnssec_signzone version 9.18.39-0ubuntu0.22.04.3-Ubuntu
+my.lab.test.		3600	IN SOA	srv2.lab.test. admin.lab.test. (
+					2026042402 ; serial
+					3600       ; refresh (1 hour)
+					900        ; retry (15 minutes)
+					1209600    ; expire (2 weeks)
+					3600       ; minimum (1 hour)
+					)
+			3600	RRSIG	SOA 5 3 3600 (
+					20260723224056 20260424224056 58822 my.lab.test.
+					eZ+zq5Z0Ab4UZ3hML1GvJbejvi0F/GveY3FQ
+					k1avnFwdvFCM94u5zDZ243pLEfDrR8WRX0WD
+					U+bZzlOs0aWHJ9kVKHvdTIs/nYv/pROB9ydw
+					kF/a01fT6BsPLjsERpfnaRu4cYoistMlvXWt
+					B2TGtwQLnqAqBsaJOtVqPaCekciPL8AgkSB1
+					Jp3OMnuYHTKHQzP52qE7Rg4gSTmDuOHbfg5p
+					6i35NeGytxWjxfxQ4ixxLSQ0qIKPB8+fy0cr
+					3pMzUvqYGGqVGeuAka+zhFLBwkZxM8FSMLuh
+					jtOlQNIejPtnkJohECVsxra3uTrrO+JJD8w6
+					w1TkP/Lk0VltzHTOnA== )
+			3600	NS	srv2.lab.test.
+			3600	RRSIG	NS 5 3 3600 (
+					20260723224056 20260424224056 58822 my.lab.test.
+					NUxC4jEboxpAJLpfVyRTLBi/vigpChiylUf6
+					vgWCeoHxctAmcvV/S1fxkOwSVIc/c9T/JtLi
+					8Uqi3xki6NseqLr3uaP+MOC8oSK9mLfbqkmb
+					tVvLlTZuBDJ4SPpxu+aj4HKv7T8D7sY8MxYH
+					uwU70KdW4W5GVUrkNVjb7C+BGOJY40Ue54Xk
+					jKFdDeOwuL1vDm6R7CEk5dOY0cnlpt9xjoXg
+					qj8WvPs/VEnXPIxgfjBOOjzDdVJL9iYqzuXc
+					GklVA7DtU27c0V+2HmGhBqxlD7nNwlpv0rFX
+					z5v8qTUA3rpFPdG0EjZLTRjkOP+R04jGS539
+					6OXvSfmUeVWpzpR1oA== )
+			3600	A	10.10.20.2
+			3600	RRSIG	A 5 3 3600 (
+					20260723224056 20260424224056 58822 my.lab.test.
+					V08QgOiw9lre+K4+n2XLpAPdUJYJYvUI55kd
+					NrfB7KOjiX6F5byXML27RCD2n8k/dfoQRHbh
+					PuNbQ9ZnLFOaz3WqhGCM0c/nL8ewEPPQsgZL
+					cFsnnVas9hMEt4jwqyivRQ0TOD93S+B590D2
+					LDg02P/KgGZiCNNsEIRALLdinElD9Su4CSBm
+					34wHfcP/0V2liOEJJcN6Bj1vRn1SbZa/6PWC
+					i1MRkMKmTpb03jpw4tDzFDn2WKuhgjnV/f2q
+					shojWIQOlxhuw4KiPAHfbeA3+1s+Ee1y3qkz
+					Ck94QhqfLfLPvw3bQzOr2cwUtmG8EyX0LHEp
+					7OkFajJnRyltijdX9g== )
+			3600	NSEC	api.my.lab.test. A NS SOA RRSIG NSEC DNSKEY
+			3600	RRSIG	NSEC 5 3 3600 (
+					20260723224056 20260424224056 58822 my.lab.test.
+					ZzQU/KJE8nFx1LvCSTnUsqeFdx+5hNpreZXX
+					HHtSq4/MX9Hu9YH5qq5SxqOkVnNkBrl/XP0D
+					rhMS1f1YTnbvw+TndHh55XZXMct+tg+cpIQV
+					RC3IvCpKLDNn1DFCfPm+G2RVVFEgBZ9gzXSR
+					NCGGxHddA+NmgsniuQka3KO3fTgQCR3p1AMV
+					Eyzkzal5OaInioSfUQA2BduNd6qz+ohu+Jy4
+					rjn9dn2R+ajERhIu1rCUCqBF1e7lPmluk6+p
+					VmRCwAgPTnKEHe8V/iKHUsNoS/+++YdKWAJc
+					ZcFDbMVLctez0DoBj1D0Cil9frAi4LJCeCxG
+					lj8rys2rzPv4P/JPmg== )
+			3600	DNSKEY	256 3 5 (
+					AwEAAaJ5KsENb2rgBLNIhIds8Zu/nqNeLSWt
+					tj06ypvecpMNHjVUOiLzrQJ+gBoRMjy1LKML
+					S/yFo0LOcGLXoM0yAB8H6iDZhuNXfffj0QLZ
+					EbN19ZPzP1FQIxSGUgRyeiy2QSTMLb53G2Gn
+					YV7yWIKjBTHkQpQTR+OYiL6tsABjFTmeBOFN
+					BBc84OXKRJdYRsSDQH6hq20HdGHoRf6s++ks
+					Vq/BDYBU7YA2AzwlzgLKkNgUe1WNHCkf4k1o
+					JYeTNP8yEdL3u0gMBLawxIR/0ucpVp1wayZA
+					WRpu/8mD9BE6jbDkX3VqxeI4XGBxCarfRAOi
+					t/r2AyQ0GdL0RXWM4dWMYO8=
+					) ; ZSK; alg = RSASHA1 ; key id = 58822
+			3600	DNSKEY	257 3 5 (
+					AwEAAa7CSpBM6xohy1DAQc4DKHSRMj1ASDbm
+					59qY6ZWLnkRG/yYzGstpotzoX32EmBCOXkt5
+					u9h9eZwzxuO+BDGCso/wcdrEajo+6mzXKj/u
+					W7qssJ0NcNlnW5g3d3tVMQgZqmiWLFHO82cc
+					gyLzJw2Q8FKUyQxBHFOT8bovbkqVf9A+D50o
+					dWPGvpeqc46duQfexTznYPZ7urOmwcbifH/y
+					HLPAzg7+h0DPtLz5EdkB92SFi4RidmlbTaQr
+					tuHno2YEIvegbGUaFJope9yNc3J//akkEY1B
+					drg9F28uXwwZJlsN0tgkYPHQ+ayf3WOQTeSH
+					ga4SizoO3PArtdtGn0Bent0=
+					) ; KSK; alg = RSASHA1 ; key id = 60974
+			3600	RRSIG	DNSKEY 5 3 3600 (
+					20260723224056 20260424224056 58822 my.lab.test.
+					NtrEsKo1kTctIUsPswgDMqL9e5rTqtGPK76m
+					AZD8LIqdfaSEea+k9nXxLWXlTM86QmIwYfCY
+					/YHxp4h3S2NGQsyoiNO3ySvzyo3ZiadRQvcR
+					zQo5ZLVv0lzu1g85105iPqiN/wYgTyxBUz2P
+					vcQVBF68Il0nZ0ZCAxl2wq/5tlqJeciTTod7
+					G1Eb6HJ8trSUiId44rVAC18mkZmZDjhZLHzU
+					sjstMvtkrzbtGeASQrJ7/KH9QTcfp6M+xidK
+					oUoehFMXL56ARF1YJpG+Rvsse2Vtu6FzbILC
+					QwNsRmx5xlGbaYQ7LMdjBjEj+8kpiNbawLRh
+					QzdE0SPmN1Ewtp28Lw== )
+			3600	RRSIG	DNSKEY 5 3 3600 (
+					20260723224056 20260424224056 60974 my.lab.test.
+					DvkOxfQdFHz2649kVnSfpuo15yejbfRhXTQa
+					L8hfHSYUXsKDQTaO8MnIX/HoaQRPHueJ+Y8Y
+					5zQknbNLf6D33sUe9MDtrNKawjBceElSfPb1
+					5vmJM6UcpfToD31nXt2vY/83/1wA8+bhDjTS
+					g3t/XANTM5ZrzixhWGwpPXdmq0gD8kS9xw7a
+					1Bgb61YZ85/xT/IAQ2sEXQsRAgCsrCB1QFhp
+					UqEeiUYM6iRBTVR1cgj31iNJsoVZp7T3EgXH
+					umU0JuhyuiE5C46/zzxtRxsIFr2h+Hj3gYpU
+					JC0BTOa5GCec/CsMcnQzVtd2QMylULfWsSFe
+					h0JfEZNhHky9KB+MKg== )
+api.my.lab.test.	3600	IN A	10.10.20.23
+			3600	RRSIG	A 5 4 3600 (
+					20260723224056 20260424224056 58822 my.lab.test.
+					Vjji6RFSyT38bS7GaiCiqdL+Ix9OZB9o9giV
+					tQ37srpYKAyJv+eJLSTIHFfUj3r9ixqG/6mT
+					KY72kQkHPYxk3JbfI277EpDJnQqJXJBICupS
+					7iMel+ryWJgc68ecA2FuNFkC3YT67YOKVrIG
+					gkEPMc281EQkWAaxPDchd0f5mruPx9XvF56u
+					jd6pu7BTR/ZpE/l8cZfks5ajjf+n39ZCOVAl
+					pnONwNEaEYiHTLLeqvpvIWKWGNMKJRvVVQY1
+					pS+8gAbzZWLSiTwEJWs0YzD/zj2XZKPL7Zcm
+					AJAOK2USfNbX1n76nt7tGfeT1/6EPHJMJS7L
+					gjXQNT8Bt+yFIFekxw== )
+			3600	NSEC	www.my.lab.test. A RRSIG NSEC
+			3600	RRSIG	NSEC 5 4 3600 (
+					20260723224056 20260424224056 58822 my.lab.test.
+					fkAcNYqvNIZR+f3CPUCsM/Bd5I7owrC4s6n7
+					VpuAtQzbn4z9H1qLLcJaWEx7Tjhk7OIYU5Gr
+					ntkvdD2GtU3XleQzceaaz52wU5CLHjAvXoGK
+					p21cdDudP6wvekEpFDdcFurECcuCjLVsxYmm
+					uO2x0zc7bkcDNUcvRznSgDQ9ClkmgNNa2e3W
+					f4wyfTW9qY1Q4Y5fOAvVHOQWkNyEChoTNQuK
+					mu7WYuHZX6KPw6FjIIyxaxH1twT0eszvp+P+
+					OJzZNlKNTMuYB03Rnc0vLDsP+ORjM9R8B+GX
+					5WDpOWrshbZ3uxrYQCd9XG+skFMClVNiGuFy
+					cuAXsuRMgHBsRRwYuA== )
+www.my.lab.test.	3600	IN A	10.10.20.22
+			3600	RRSIG	A 5 4 3600 (
+					20260723224056 20260424224056 58822 my.lab.test.
+					OT56aukaLG29DMa+G8YT6U8VMqdZuS2OAYEm
+					Vec4wlY/MTcWKlq9IHMKQLRIJO2e0TZjCvBn
+					nIgaIJWP2S6CS6gi8TYtiaZyJFXrKTuhWJke
+					a035uax7SjqIKBZpt1VmHV8Vg1MulMs6rRXY
+					Sad7cnzMUBwLlbzTTZUMCwRXoV8FU/tOlAYp
+					Zh/hUzprY7zvQ8/perudnRINtCZtxnSi+DJO
+					dslSGLkpIKfTOwc+4eZx4vMaifZ65LcgOZgu
+					dq4BnCb14hsYRSW2maaSDJdvMF7KUz4FVQFC
+					gSWN1OwHe+96HCnZ/mwbcVxtNnbjtNCVtxiJ
+					uMoNqoqgvXxkVHWNww== )
+			3600	NSEC	my.lab.test. A RRSIG NSEC
+			3600	RRSIG	NSEC 5 4 3600 (
+					20260723224056 20260424224056 58822 my.lab.test.
+					Ysx71qh1MbDkKLV2b9sme31SCdguFbDWBx59
+					BsDQyT/lLi7/tuyUptT2qGDCnYMR74SSxkzC
+					qZpjMfI3CFWUXVp0/2PYz6NPudONkI+hrmMx
+					WvwL3PJF71jjrzPK5gB9AhuTtO5p7n6lQyaH
+					nR0fIiYZIiHrrBrOfmY/Oa1ViIdWVII8ScFa
+					MEndJgaPZC9jghNejpzIadNrsy8GKhBxcXZ5
+					/KORXoavDGn562yU/QqfT5lYOyxCWwS33uN0
+					Go1/BnybaW/+PVFKQDzn9tXGcJkAtyH/uVcY
+					Yyc3L3hfPH6m/yQT2kJeW8EosB0NerCYkVpm
+					pbSen4fQdeb7G/gNyg== )

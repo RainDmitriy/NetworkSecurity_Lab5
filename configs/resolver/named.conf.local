@@ -1,0 +1,11 @@
+zone "lab.test" {
+    type forward;
+    forward only;
+    forwarders { 10.10.20.11; 10.10.20.12; };
+};
+
+zone "my.lab.test" {
+    type forward;
+    forward only;
+    forwarders { 10.10.20.2; };
+};

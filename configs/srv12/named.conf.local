@@ -1,0 +1,5 @@
+zone "lab.test" {
+    type slave;
+    masters { 10.10.20.11; };
+    file "/var/cache/bind/db.lab.test";
+};

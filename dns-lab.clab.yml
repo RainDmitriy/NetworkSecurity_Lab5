@@ -1,0 +1,108 @@
+name: dnslab
+
+mgmt:
+  network: dnslab-mgmt
+  ipv4-subnet: 172.31.100.0/24
+
+topology:
+  kinds:
+    linux:
+      image: bindlab:ubuntu22.04
+
+  nodes:
+    client:
+      kind: linux
+      image: wbitt/network-multitool:alpine-extra
+      cmd: >
+        sh -lc '
+          until ip link show eth1 >/dev/null 2>&1; do sleep 1; done;
+          ip addr add 10.10.10.2/24 dev eth1;
+          echo "nameserver 10.10.10.53" > /etc/resolv.conf;
+          sleep infinity
+        '
+
+    resolver:
+      kind: linux
+      binds:
+        - ./configs/resolver/named.conf.options:/etc/bind/named.conf.options:ro
+        - ./configs/resolver/named.conf.local:/etc/bind/named.conf.local:ro
+      cmd: >
+        bash -lc '
+          until ip link show eth1 >/dev/null 2>&1; do sleep 1; done;
+          until ip link show eth2 >/dev/null 2>&1; do sleep 1; done;
+          ip addr add 10.10.10.53/24 dev eth1;
+          ip addr add 10.10.20.53/24 dev eth2;
+          mkdir -p /run/named /var/cache/bind;
+          chown -R bind:bind /run/named /var/cache/bind;
+          exec named -4 -g -u bind
+        '
+
+    sw:
+      kind: bridge
+
+    srv11:
+      kind: linux
+      binds:
+        - ./configs/srv11/named.conf.options:/etc/bind/named.conf.options:ro
+        - ./configs/srv11/named.conf.local:/etc/bind/named.conf.local:ro
+        - ./configs/srv11/zones:/etc/bind/zones:ro
+      cmd: >
+        bash -lc '
+          until ip link show eth1 >/dev/null 2>&1; do sleep 1; done;
+          ip addr add 10.10.20.11/24 dev eth1;
+          mkdir -p /run/named /var/cache/bind;
+          chown -R bind:bind /run/named /var/cache/bind;
+          exec named -4 -g -u bind
+        '
+
+    srv12:
+      kind: linux
+      binds:
+        - ./configs/srv12/named.conf.options:/etc/bind/named.conf.options:ro
+        - ./configs/srv12/named.conf.local:/etc/bind/named.conf.local:ro
+      cmd: >
+        bash -lc '
+          until ip link show eth1 >/dev/null 2>&1; do sleep 1; done;
+          ip addr add 10.10.20.12/24 dev eth1;
+          mkdir -p /run/named /var/cache/bind;
+          chown -R bind:bind /run/named /var/cache/bind;
+          exec named -4 -g -u bind
+        '
+
+    srv2:
+      kind: linux
+      binds:
+        - ./configs/srv2/named.conf.options:/etc/bind/named.conf.options:ro
+        - ./configs/srv2/named.conf.local:/etc/bind/named.conf.local:ro
+        - ./configs/srv2/zones:/etc/bind/zones
+        - ./configs/srv2/keys:/etc/bind/keys
+      cmd: >
+        bash -lc '
+          until ip link show eth1 >/dev/null 2>&1; do sleep 1; done;
+          ip addr add 10.10.20.2/24 dev eth1;
+          mkdir -p /run/named /var/cache/bind;
+          chown -R bind:bind /run/named /var/cache/bind;
+          exec named -4 -g -u bind
+        '
+
+  links:
+    - endpoints: ["client:eth1", "resolver:eth1"]
+      labels:
+        client_eth1: "10.10.10.2/24"
+        resolver_eth1: "10.10.10.53/24"
+
+    - endpoints: ["resolver:eth2", "sw:eth1"]
+      labels:
+        resolver_eth2: "10.10.20.53/24"
+
+    - endpoints: ["srv11:eth1", "sw:eth2"]
+      labels:
+        srv11_eth1: "10.10.20.11/24"
+
+    - endpoints: ["srv12:eth1", "sw:eth3"]
+      labels:
+        srv12_eth1: "10.10.20.12/24"
+
+    - endpoints: ["srv2:eth1", "sw:eth4"]
+      labels:
+        srv2_eth1: "10.10.20.2/24"

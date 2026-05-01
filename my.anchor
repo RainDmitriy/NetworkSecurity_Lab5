@@ -1,0 +1,3 @@
+trust-anchors {
+    my.lab.test. static-key 257 3 5 "AwEAAa7CSpBM6xohy1DAQc4DKHSRMj1ASDbm59qY6ZWLnkRG/yYzGstpotzoX32EmBCOXkt5u9h9eZwzxuO+BDGCso/wcdrEajo+6mzXKj/uW7qssJ0NcNlnW5g3d3tVMQgZqmiWLFHO82ccgyLzJw2Q8FKUyQxBHFOT8bovbkqVf9A+D50odWPGvpeqc46duQfexTznYPZ7urOmwcbifH/yHLPAzg7+h0DPtLz5EdkB92SFi4RidmlbTaQrtuHno2YEIvegbGUaFJope9yNc3J//akkEY1Bdrg9F28uXwwZJlsN0tgkYPHQ+ayf3WOQTeSHga4SizoO3PArtdtGn0Bent0=";
+};

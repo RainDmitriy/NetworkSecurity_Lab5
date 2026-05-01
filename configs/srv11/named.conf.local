@@ -1,0 +1,6 @@
+zone "lab.test" {
+    type master;
+    file "/etc/bind/zones/db.lab.test";
+    allow-transfer { 10.10.20.12; };
+    also-notify { 10.10.20.12; };
+};

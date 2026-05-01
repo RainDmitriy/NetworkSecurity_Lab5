@@ -1,0 +1,19 @@
+$TTL 3600
+@   IN  SOA srv11.lab.test. admin.lab.test. (
+        2026042403 ; Serial
+        3600       ; Refresh
+        900        ; Retry
+        1209600    ; Expire
+        3600 )     ; Negative Cache TTL
+
+    IN  NS  srv11.lab.test.
+    IN  NS  srv12.lab.test.
+
+srv11   IN  A   10.10.20.11
+srv12   IN  A   10.10.20.12
+srv2    IN  A   10.10.20.2
+
+; Делегирование поддомена my.lab.test
+my      IN  NS  srv2.lab.test.
+
+my.lab.test.		IN DS 60974 5 2 373B0FFFC0D98F3ECFE2B98CF8A496E17634CFE57D002AF7132F9821 B940FC48
